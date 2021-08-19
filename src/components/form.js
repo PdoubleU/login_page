@@ -1,52 +1,43 @@
 import React from 'react';
-import {
-  FormGroup,
-  Label,
-  Input,
-  FormText,
-  Button,
-  Card,
-  CardBody,
-} from 'reactstrap';
+import { FormGroup, Label, Input, Button, Card, CardBody } from 'reactstrap';
 
-const Forms = () => {
+const Forms = ({ isFirstSection, handleNext }) => {
   return (
-    <Card>
+    <Card className="w-50">
       <CardBody>
         <form>
-          <FormGroup>
-            <Label for="exampleEmail">Email address</Label>
-            <Input
-              type="email"
-              name="email"
-              id="exampleEmail"
-              placeholder="Enter email"
-            />
-            <FormText color="muted">
-              We'll never share your email with anyone else.
-            </FormText>
-          </FormGroup>
-          <FormGroup>
-            <Label for="examplePassword">Password</Label>
-            <Input
-              type="password"
-              name="password"
-              id="examplePassword"
-              placeholder="Password"
-              autoComplete="off"
-            />
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" /> Check me out
-              <span className="form-check-sign">
-                <span className="check"></span>
-              </span>
-            </Label>
-          </FormGroup>
-          <Button color="primary" type="submit">
-            Submit
-          </Button>
+          {isFirstSection && (
+            <>
+              <FormGroup>
+                <Label for="nickname">Type your nickname</Label>
+                <Input
+                  type="name"
+                  name="nickname"
+                  id="nickname"
+                  placeholder="nickname"
+                />
+              </FormGroup>
+              <Button color="primary" type="button" onClick={handleNext}>
+                Next
+              </Button>
+            </>
+          )}
+          {!isFirstSection && (
+            <>
+              <FormGroup>
+                <Label for="cardNo">Your card's number</Label>
+                <Input
+                  type="number"
+                  name="card"
+                  id="cardNo"
+                  placeholder="card number"
+                />
+              </FormGroup>
+              <Button color="primary" type="submit">
+                Finish
+              </Button>
+            </>
+          )}
         </form>
       </CardBody>
     </Card>
