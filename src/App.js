@@ -9,14 +9,17 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFirstSection, setIsFirstSection] = useState(true);
 
-  const onSubmit = (data) => console.log(data);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
+  const onSubmit = (data) => {
+    setIsOpen(true);
+    reloadPage(3000);
   };
 
   const toggleSection = () => {
     setIsFirstSection(!isFirstSection);
+  };
+
+  const reloadPage = (timing) => {
+    setTimeout(() => window.location.reload(), timing);
   };
 
   return (

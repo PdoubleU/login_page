@@ -25,7 +25,7 @@ const Forms = ({ isFirstSection, handleNext, onSubmit }) => {
                   required: true,
                   minLength: 3,
                   maxLength: 20,
-                  pattern: /[A-Z][a-z][0-9]_-]+/,
+                  pattern: /[A-Za-z0-9_-]+/,
                 })}
               />
             </FormGroup>
