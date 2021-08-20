@@ -19,3 +19,9 @@ input[type=number]{
   -moz-appearance: textfield;
   margin: 0;
 }
+
+.timer {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}

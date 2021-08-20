@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormGroup, Label, Input, Button, Card, CardBody } from 'reactstrap';
 
-const Forms = ({ isFirstSection, handleNext, onSubmit }) => {
+const Forms = ({
+  isFirstSection,
+  handleNext,
+  onSubmit,
+  isTimerVisible,
+  timer,
+}) => {
   const {
     register,
     handleSubmit,
@@ -12,7 +18,7 @@ const Forms = ({ isFirstSection, handleNext, onSubmit }) => {
   return (
     <Card className="w-50">
       <CardBody>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="register_form" onSubmit={handleSubmit(onSubmit)}>
           <span className={isFirstSection ? 'visible' : 'hidden'}>
             <FormGroup>
               <Label for="nickname">Type your nickname</Label>
@@ -32,6 +38,7 @@ const Forms = ({ isFirstSection, handleNext, onSubmit }) => {
             <Button color="primary" type="button" onClick={handleNext}>
               Next
             </Button>
+            <span className="timer">{isTimerVisible && timer}</span>
           </span>
           <span className={!isFirstSection ? 'visible' : 'hidden'}>
             <FormGroup>
@@ -51,22 +58,18 @@ const Forms = ({ isFirstSection, handleNext, onSubmit }) => {
             <Button color="primary" type="submit">
               Finish
             </Button>
+            <span className="timer">{isTimerVisible && timer}</span>
           </span>
         </form>
         {(errors.nickname?.type === 'minLength' ||
           errors.nickname?.type === 'maxLength' ||
-          errors.nickname?.type === 'pattern') && (
-          <p>
-            Nickname has min 3 and max 20 characters, only letters, digits,
-            underscore or dash
-          </p>
-        )}
-        {errors.nickname?.type === 'required' && <p>Field is required</p>}
-        {errors.cardNo?.type === 'required' && <p>Field is required</p>}
+          errors.nickname?.type === 'pattern') &&
+          'Nickname has min 3 and max 20 characters, only letters, digits, underscore or dash'}
+        {errors.nickname?.type === 'required' && 'Nickname is required'}
+        {errors.cardNo?.type === 'required' && 'Card is required'}
         {(errors.cardNo?.type === 'minLength' ||
-          errors.cardNo?.type === 'maxLength') && (
-          <p>Card number should have 10 digits</p>
-        )}
+          errors.cardNo?.type === 'maxLength') &&
+          'Card number should have 10 digits'}
       </CardBody>
     </Card>
   );
