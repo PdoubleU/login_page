@@ -9,12 +9,17 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFirstSection, setIsFirstSection] = useState(true);
 
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
+  const onSubmit = (data) => {
+    setIsOpen(true);
+    reloadPage(3000);
   };
 
   const toggleSection = () => {
     setIsFirstSection(!isFirstSection);
+  };
+
+  const reloadPage = (timing) => {
+    setTimeout(() => window.location.reload(), timing);
   };
 
   return (
@@ -24,6 +29,7 @@ const App = () => {
         <Forms
           isFirstSection={isFirstSection}
           handleNext={toggleSection}
+          onSubmit={onSubmit}
         ></Forms>
       </Wrapper>
     </>
