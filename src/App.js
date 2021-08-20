@@ -9,6 +9,8 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFirstSection, setIsFirstSection] = useState(true);
 
+  const onSubmit = (data) => console.log(data);
+
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
@@ -24,6 +26,7 @@ const App = () => {
         <Forms
           isFirstSection={isFirstSection}
           handleNext={toggleSection}
+          onSubmit={onSubmit}
         ></Forms>
       </Wrapper>
     </>

@@ -1,1 +1,7 @@
+.visible {
+    display: initial;
+}
 
+.hidden {
+    display: none;
+}
