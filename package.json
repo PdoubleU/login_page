@@ -2,6 +2,7 @@
   "name": "login_page",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pdoubleu.github.io/login_page",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -21,7 +22,8 @@
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
