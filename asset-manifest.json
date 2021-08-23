@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/login_page/static/css/main.788d5054.chunk.css",
+    "main.js": "/login_page/static/js/main.6eec5be6.chunk.js",
+    "main.js.map": "/login_page/static/js/main.6eec5be6.chunk.js.map",
+    "runtime-main.js": "/login_page/static/js/runtime-main.43cf559e.js",
+    "runtime-main.js.map": "/login_page/static/js/runtime-main.43cf559e.js.map",
+    "static/js/2.0845bcca.chunk.js": "/login_page/static/js/2.0845bcca.chunk.js",
+    "static/js/2.0845bcca.chunk.js.map": "/login_page/static/js/2.0845bcca.chunk.js.map",
+    "static/js/3.baf71f52.chunk.js": "/login_page/static/js/3.baf71f52.chunk.js",
+    "static/js/3.baf71f52.chunk.js.map": "/login_page/static/js/3.baf71f52.chunk.js.map",
+    "index.html": "/login_page/index.html",
+    "static/css/main.788d5054.chunk.css.map": "/login_page/static/css/main.788d5054.chunk.css.map",
+    "static/js/2.0845bcca.chunk.js.LICENSE.txt": "/login_page/static/js/2.0845bcca.chunk.js.LICENSE.txt",
+    "static/media/blk-design-system-react.scss": "/login_page/static/media/square5.16283001.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.43cf559e.js",
+    "static/js/2.0845bcca.chunk.js",
+    "static/css/main.788d5054.chunk.css",
+    "static/js/main.6eec5be6.chunk.js"
+  ]
+}
