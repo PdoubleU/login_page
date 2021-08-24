@@ -7,6 +7,7 @@ import {
   messageNicknameReq,
   messageCardNoReq,
   backwardArrowUNICODE,
+  checkPattern,
 } from '../constans.js';
 
 const Forms = ({
@@ -38,7 +39,7 @@ const Forms = ({
                   required: true,
                   minLength: 3,
                   maxLength: 20,
-                  pattern: /[A-Za-z0-9_-]+/,
+                  pattern: checkPattern,
                 })}
               />
             </FormGroup>

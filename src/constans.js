@@ -9,10 +9,13 @@ const messageCardNoReq = 'Card is required.\t';
 
 const backwardArrowUNICODE = 'ᐊ';
 
+const checkPattern = /^[a-zA-Z0-9_-]*$/gm;
+
 export {
   messageWrongNickname,
   messageWrongCardNo,
   messageNicknameReq,
   messageCardNoReq,
   backwardArrowUNICODE,
+  checkPattern,
 };
