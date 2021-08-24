@@ -55,7 +55,7 @@ const Forms = ({
                 type="number"
                 name="card"
                 id="cardNo"
-                placeholder="card number"
+                placeholder="number"
                 {...register('cardNo', {
                   required: true,
                   minLength: 10,

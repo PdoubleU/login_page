@@ -5,7 +5,7 @@ const ModalElement = ({ isOpen }) => {
     <>
       <Modal isOpen={isOpen}>
         <ModalBody>
-          <p>You have registered succssesfully!</p>
+          <p>Buddy have registered succssesfully!</p>
         </ModalBody>
       </Modal>
     </>
