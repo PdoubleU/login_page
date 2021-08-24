@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FormGroup, Label, Input, Button, Card, CardBody } from 'reactstrap';
+import {
+  messageWrongNickname,
+  messageWrongCardNo,
+  messageNicknameReq,
+  messageCardNoReq,
+  backwardArrowUNICODE,
+} from '../constans.js';
 
 const Forms = ({
   isFirstSection,
@@ -35,7 +42,7 @@ const Forms = ({
                 })}
               />
             </FormGroup>
-            <Button color="primary" type="button" onClick={handleNext}>
+            <Button className="btn-primary" type="button" onClick={handleNext}>
               Next
             </Button>
             <span className="timer">{isTimerVisible && timer}</span>
@@ -55,8 +62,15 @@ const Forms = ({
                 })}
               />
             </FormGroup>
-            <Button color="primary" type="submit">
+            <Button className="btn-primary" type="submit">
               Finish
+            </Button>
+            <Button
+              className="btn-primary btn-icon btn-round btn-sm"
+              type="button"
+              onClick={handleNext}
+            >
+              {backwardArrowUNICODE}
             </Button>
             <span className="timer">{isTimerVisible && timer}</span>
           </span>
@@ -64,12 +78,12 @@ const Forms = ({
         {(errors.nickname?.type === 'minLength' ||
           errors.nickname?.type === 'maxLength' ||
           errors.nickname?.type === 'pattern') &&
-          'Nickname has min 3 and max 20 characters, only letters, digits, underscore or dash'}
-        {errors.nickname?.type === 'required' && 'Nickname is required'}
-        {errors.cardNo?.type === 'required' && 'Card is required'}
+          messageWrongNickname}
+        {errors.nickname?.type === 'required' && messageNicknameReq}
+        {errors.cardNo?.type === 'required' && messageCardNoReq}
         {(errors.cardNo?.type === 'minLength' ||
           errors.cardNo?.type === 'maxLength') &&
-          'Card number should have 10 digits'}
+          messageWrongCardNo}
       </CardBody>
     </Card>
   );
